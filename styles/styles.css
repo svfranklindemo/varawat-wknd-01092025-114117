@@ -200,12 +200,12 @@ header {
 
 /* Need to adjust main because of positioning of the fixed header */
 main {
-    margin-top: 105px;
+    margin-top:0;
 }
 
 @media (width < 768px) {
     main {
-        margin-top: 40px;
+        margin-top: 0;
     }
 }
 
@@ -683,4 +683,9 @@ main .section.section-title .default-content-wrapper:first-of-type p::after {
 /* Hide minicart SKU */
 .dropin-design .dropin-cart-item__sku {
     display: none;
+}
+h2
+ {
+    font-size: 40px;
+    font-weight: 900;
 }

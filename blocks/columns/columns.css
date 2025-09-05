@@ -31,3 +31,72 @@
     order: unset;
   }
 }
+.columns.block.columns-3-cols {
+  display: flex;
+  gap: 21px;
+
+}
+.columns.block.columns-3-cols p{
+margin:10px 0;
+}
+.columns.block.columns-3-cols > div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  flex: 1;
+  width: 100%;
+}
+
+.columns.block.columns-3-cols > div > div {
+  text-align: left;
+  width: 100%;
+  flex: 1;
+}
+
+.columns.block.columns-3-cols > div > div p {
+  text-align: left;
+}
+
+.columns.block.columns-3-cols > div > div:last-child {
+  text-align: left;
+}
+.columns.block.columns-3-cols > div > div:last-child em {
+  font-style: normal;
+}
+
+.columns.block.columns-3-cols > div > div:last-child a {
+  color: #1e40af;
+}
+
+
+/* Arrow icon for navigate link */
+.columns.block.columns-3-cols > div > div:last-child a::after {
+  content: '';
+  width: 28px;
+  height: 28px;
+  background-image: url('/icons/bluearrow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  margin-left: 4px;
+  vertical-align: middle;
+  transition: all 0.3s ease;
+}
+
+/* Image hover animation */
+.columns.block.columns-3-cols > div > .columns-img-col img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.columns.block.columns-3-cols > div:hover > .columns-img-col img {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+/* Arrow hover animation */
+.columns.block.columns-3-cols > div > div:last-child a:hover::after {
+   transform: scale(1.6);
+  transform-origin: bottom left 0;
+}

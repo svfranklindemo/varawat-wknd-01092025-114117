@@ -4,10 +4,12 @@ footer {
   font: var(--type-body-2-default-font);
   letter-spacing: var(--type-body-2-default-letter-spacing);
   color: var(--color-neutral-50);
+  background: #01044b;
 }
 
 footer .footer {
-  max-width: var(--large-grid-layout);
+  max-width: 100%;
+  padding:20px;
   margin: auto;
 }
 
@@ -25,10 +27,7 @@ footer a {
   color: var(--color-neutral-50) !important;
 }
 
-footer .wrapper {
-  display: flex;
-  align-items: center;
-}
+
 
 @media (width <= 900px) {
   footer .wrapper {
@@ -111,4 +110,153 @@ footer .wrapper .section.site-links .default-content-wrapper ul li a {
   .footer .wrapper .section.social-media img {
     padding: 0.5em 0.5em 0.2em;
   }
+}
+
+/* Footer Toggle Button Styling - Matching Reference Site */
+.footer-toggle-btn {
+  background: transparent;
+  border: none;
+  color: #ffffff;
+  font-size: 0.8rem;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+  display: inline-block;
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 10;
+  vertical-align: middle;
+  margin-left: 0.5rem;
+}
+
+.footer-toggle-btn:hover {
+  color: #f97316;
+}
+
+.footer-toggle-btn:focus {
+  outline: 2px solid #f97316;
+  outline-offset: 2px;
+}
+
+/* Footer Columns Layout - Matching Reference Site */
+.section.heading-list.social-links-4.columns-container {
+ 
+  padding: 3rem 0 2rem 0;
+  position: relative;
+}
+
+.columns.block.columns-5-cols {
+  display: flex;
+  flex-direction: column;
+ margin: 0 auto;
+  padding: 0 2rem;
+  position: relative;
+}
+
+.columns.block.columns-5-cols > div:first-child {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin-bottom: 0;
+  position: relative;
+}
+
+.columns.block.columns-5-cols > div:first-child h2 {
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: left;
+  font-size: 18px;
+  line-height: normal;
+}
+
+.columns.block.columns-5-cols > div:nth-child(2) {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.columns.block.columns-5-cols > div:nth-child(2) p {
+  color: #ffffff;
+   text-align: left;
+  
+}
+
+.columns.block.columns-5-cols > div:nth-child(2) p:hover {
+  color: #f97316;
+  cursor: pointer;
+}
+.columns.block.columns-5-cols{
+margin-top:20px;
+margin-bottom:20px;
+
+}
+
+/* Arrow positioning - Matching Reference Site */
+.columns.block.columns-5-cols > div:first-child > div:nth-child(3) {
+  position: relative;
+}
+
+.columns.block.columns-5-cols > div:first-child > div:nth-child(3) h2 {
+  display: inline-block;
+  margin-right: 0.5rem;
+}
+
+.columns.block.columns-5-cols > div:first-child > div:nth-child(3) .footer-toggle-btn {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  margin: 0;
+}
+
+
+.footer .columns.block.columns-5-cols > div:nth-child(3) {
+  height: 1px;
+  width: 100%;
+  background: #fff;
+  position: relative;
+  margin-top: 50px;
+  margin-bottom: 22px;
+}
+
+.footer .columns.block.columns-5-cols > div:nth-child(3)::after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  width: 20px;
+  background-color: #fff;
+  background-image: url("/icons/footer-expand.svg");
+  left: 50%;
+  top: -12px;
+  margin-left: -12px;
+  cursor: pointer;
+  scale: 1.2;
+}
+
+footer .footer__separator--collapsed::after {
+  background-image: url("/icons/footer-collapes.svg")!important;
+}
+
+footer .collpsable {
+  transition: all 0.2s ease-in-out;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .columns.block.columns-5-cols > div:first-child {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .columns.block.columns-5-cols > div:nth-child(2){
+    grid-template-columns: 1fr;
+   
+  }
+  
+  
+  
+  
 }
