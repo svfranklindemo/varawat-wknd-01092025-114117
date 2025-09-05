@@ -1,0 +1,479 @@
+/* Maruti Carousel Multi Component */
+/* Inspired by Maruti Suzuki Arena section slider-container */
+
+.maruti-carousel-multi {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: var(--ms-white);
+}
+
+/* Slider Container */
+.maruti-carousel-multi .slider-container {
+  position: relative;
+  max-width: var(--ms-container-max-width, 1200px);
+  margin: 0 auto;
+  padding: 0 var(--ms-space-4);
+}
+
+/* Slider Header */
+.maruti-carousel-multi .slider-header {
+  text-align: center;
+  margin-bottom: var(--ms-space-8);
+  padding: var(--ms-space-6) 0;
+}
+
+.maruti-carousel-multi .slider-title {
+  font-size: var(--ms-text-4xl);
+  font-weight: var(--ms-font-bold);
+  color: var(--ms-gray-900);
+  margin-bottom: var(--ms-space-4);
+  line-height: var(--ms-leading-tight);
+}
+
+.maruti-carousel-multi .slider-subtitle {
+  font-size: var(--ms-text-lg);
+  color: var(--ms-gray-600);
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: var(--ms-leading-relaxed);
+}
+
+/* Slider Navigation */
+.maruti-carousel-multi .slider-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--ms-space-4);
+  margin-bottom: var(--ms-space-8);
+}
+
+.maruti-carousel-multi .slider-nav-button {
+  background: var(--ms-white);
+  border: 2px solid var(--ms-gray-200);
+  border-radius: var(--ms-radius-full);
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--ms-transition-base);
+  color: var(--ms-gray-600);
+}
+
+.maruti-carousel-multi .slider-nav-button:hover {
+  border-color: var(--ms-primary-500);
+  color: var(--ms-primary-600);
+  transform: translateY(-2px);
+  box-shadow: var(--ms-shadow-md);
+}
+
+.maruti-carousel-multi .slider-nav-button:active {
+  transform: translateY(0);
+}
+
+.maruti-carousel-multi .slider-nav-button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.maruti-carousel-multi .slider-nav-button svg {
+  width: 20px;
+  height: 20px;
+  fill: currentColor;
+}
+
+/* Slider Track */
+.maruti-carousel-multi .slider-track {
+  display: flex;
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  gap: var(--ms-space-6);
+  padding: var(--ms-space-4) 0;
+}
+
+/* Slider Item */
+.maruti-carousel-multi .slider-item {
+  flex: 0 0 calc(33.333% - var(--ms-space-4));
+  min-width: 300px;
+  opacity: 0.7;
+  transform: scale(0.95);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  cursor: pointer;
+}
+
+.maruti-carousel-multi .slider-item.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.maruti-carousel-multi .slider-item:hover {
+  transform: scale(1.02);
+}
+
+/* Slider Item Content */
+.maruti-carousel-multi .slider-item-content {
+  background: var(--ms-white);
+  border-radius: var(--ms-radius-xl);
+  overflow: hidden;
+  box-shadow: var(--ms-shadow-sm);
+  transition: all var(--ms-transition-base);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.maruti-carousel-multi .slider-item:hover .slider-item-content {
+  box-shadow: var(--ms-shadow-lg);
+  transform: translateY(-4px);
+}
+
+/* Slider Item Image */
+.maruti-carousel-multi .slider-item-image {
+  position: relative;
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.maruti-carousel-multi .slider-item-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--ms-transition-base);
+}
+
+.maruti-carousel-multi .slider-item:hover .slider-item-image img {
+  transform: scale(1.1);
+}
+
+/* Slider Item Badge */
+.maruti-carousel-multi .slider-item-badge {
+  position: absolute;
+  top: var(--ms-space-3);
+  left: var(--ms-space-3);
+  background: var(--ms-accent-orange);
+  color: var(--ms-white);
+  padding: var(--ms-space-1) var(--ms-space-3);
+  border-radius: var(--ms-radius-full);
+  font-size: var(--ms-text-xs);
+  font-weight: var(--ms-font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+/* Slider Item Body */
+.maruti-carousel-multi .slider-item-body {
+  padding: var(--ms-space-6);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.maruti-carousel-multi .slider-item-title {
+  font-size: var(--ms-text-xl);
+  font-weight: var(--ms-font-semibold);
+  color: var(--ms-gray-900);
+  margin-bottom: var(--ms-space-3);
+  line-height: var(--ms-leading-tight);
+}
+
+.maruti-carousel-multi .slider-item-description {
+  font-size: var(--ms-text-base);
+  color: var(--ms-gray-600);
+  line-height: var(--ms-leading-relaxed);
+  margin-bottom: var(--ms-space-4);
+  flex: 1;
+}
+
+/* Slider Item Actions */
+.maruti-carousel-multi .slider-item-actions {
+  display: flex;
+  gap: var(--ms-space-3);
+  margin-top: auto;
+}
+
+.maruti-carousel-multi .slider-item-button {
+  flex: 1;
+  padding: var(--ms-space-3) var(--ms-space-4);
+  border: 1px solid var(--ms-primary-600);
+  border-radius: var(--ms-radius-lg);
+  background: var(--ms-white);
+  color: var(--ms-primary-600);
+  font-size: var(--ms-text-sm);
+  font-weight: var(--ms-font-medium);
+  text-align: center;
+  text-decoration: none;
+  transition: all var(--ms-transition-base);
+  cursor: pointer;
+}
+
+.maruti-carousel-multi .slider-item-button:hover {
+  background: var(--ms-primary-600);
+  color: var(--ms-white);
+  transform: translateY(-1px);
+  box-shadow: var(--ms-shadow-md);
+}
+
+.maruti-carousel-multi .slider-item-button.primary {
+  background: var(--ms-primary-600);
+  color: var(--ms-white);
+}
+
+.maruti-carousel-multi .slider-item-button.primary:hover {
+  background: var(--ms-primary-700);
+  border-color: var(--ms-primary-700);
+}
+
+/* Slider Indicators */
+.maruti-carousel-multi .slider-indicators {
+  display: flex;
+  justify-content: center;
+  gap: var(--ms-space-2);
+  margin-top: var(--ms-space-8);
+}
+
+.maruti-carousel-multi .slider-indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: var(--ms-radius-full);
+  background: var(--ms-gray-300);
+  cursor: pointer;
+  transition: all var(--ms-transition-base);
+}
+
+.maruti-carousel-multi .slider-indicator.active {
+  background: var(--ms-primary-600);
+  transform: scale(1.2);
+}
+
+.maruti-carousel-multi .slider-indicator:hover {
+  background: var(--ms-primary-400);
+}
+
+/* Slider Progress Bar */
+.maruti-carousel-multi .slider-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: var(--ms-primary-200);
+  width: 100%;
+  overflow: hidden;
+}
+
+.maruti-carousel-multi .slider-progress-bar {
+  height: 100%;
+  background: var(--ms-primary-600);
+  width: 0%;
+  transition: width 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .maruti-carousel-multi .slider-item {
+    flex: 0 0 calc(50% - var(--ms-space-3));
+    min-width: 280px;
+  }
+  
+  .maruti-carousel-multi .slider-title {
+    font-size: var(--ms-text-3xl);
+  }
+}
+
+@media (max-width: 768px) {
+  .maruti-carousel-multi .slider-container {
+    padding: 0 var(--ms-space-3);
+  }
+  
+  .maruti-carousel-multi .slider-header {
+    margin-bottom: var(--ms-space-6);
+    padding: var(--ms-space-4) 0;
+  }
+  
+  .maruti-carousel-multi .slider-title {
+    font-size: var(--ms-text-2xl);
+  }
+  
+  .maruti-carousel-multi .slider-subtitle {
+    font-size: var(--ms-text-base);
+  }
+  
+  .maruti-carousel-multi .slider-nav {
+    margin-bottom: var(--ms-space-6);
+  }
+  
+  .maruti-carousel-multi .slider-nav-button {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .maruti-carousel-multi .slider-nav-button svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  .maruti-carousel-multi .slider-item {
+    flex: 0 0 calc(100% - var(--ms-space-2));
+    min-width: 260px;
+  }
+  
+  .maruti-carousel-multi .slider-item-body {
+    padding: var(--ms-space-4);
+  }
+  
+  .maruti-carousel-multi .slider-item-title {
+    font-size: var(--ms-text-lg);
+  }
+  
+  .maruti-carousel-multi .slider-indicators {
+    margin-top: var(--ms-space-6);
+  }
+}
+
+@media (max-width: 480px) {
+  .maruti-carousel-multi .slider-container {
+    padding: 0 var(--ms-space-2);
+  }
+  
+  .maruti-carousel-multi .slider-title {
+    font-size: var(--ms-text-xl);
+  }
+  
+  .maruti-carousel-multi .slider-nav-button {
+    width: 36px;
+    height: 36px;
+  }
+  
+  .maruti-carousel-multi .slider-item-actions {
+    flex-direction: column;
+  }
+}
+
+/* Animation Classes */
+.maruti-carousel-multi .slider-item.fade-in {
+  animation: slideFadeIn 0.6s ease-out;
+}
+
+.maruti-carousel-multi .slider-item.slide-in-left {
+  animation: slideInLeft 0.5s ease-out;
+}
+
+.maruti-carousel-multi .slider-item.slide-in-right {
+  animation: slideInRight 0.5s ease-out;
+}
+
+.maruti-carousel-multi .slider-item.scale-in {
+  animation: scaleIn 0.4s ease-out;
+}
+
+/* Keyframe Animations */
+@keyframes slideFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0) scale(1);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Hover Effects */
+.maruti-carousel-multi .slider-item:hover .slider-item-content {
+  transform: translateY(-8px);
+  box-shadow: var(--ms-shadow-xl);
+}
+
+.maruti-carousel-multi .slider-item:hover .slider-item-image::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(2, 132, 199, 0.1) 0%,
+    rgba(7, 89, 133, 0.2) 100%
+  );
+  opacity: 0;
+  animation: overlayFadeIn 0.3s ease-out forwards;
+}
+
+@keyframes overlayFadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
+/* Loading States */
+.maruti-carousel-multi .slider-item.loading {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.maruti-carousel-multi .slider-item.loading .slider-item-image {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 200% 100%;
+  animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+/* Focus States for Accessibility */
+.maruti-carousel-multi .slider-nav-button:focus-visible {
+  outline: 2px solid var(--ms-primary-500);
+  outline-offset: 2px;
+}
+
+.maruti-carousel-multi .slider-item-button:focus-visible {
+  outline: 2px solid var(--ms-primary-500);
+  outline-offset: 2px;
+}
+
+.maruti-carousel-multi .slider-indicator:focus-visible {
+  outline: 2px solid var(--ms-primary-500);
+  outline-offset: 2px;
+}
